@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weatherApp</title>
+    <link rel="stylesheet" href="./styles.css" type="text/css">
+</head>
+<body>
+    <div id="main-container">
+        <header id='app-header'>
+            <h1>weather app</h1>
+        </header>
+        <div id='sub-container'>
+            <div id='form-container'>
+                <label for='location'>Enter Location</label>
+                <input type='text' name='location' id='location' onchange="setLocation(event)">
+                <button onclick='getWeatherByLocation(LOCATION)'>Get Weather</button>
+            </div>
+            <div id='data-container'>
+                <div id='location-container'>
+                    <h2 id='location-title'></h2>
+                    <span id='location-region'></span><span id='location-country'></span>
+                </div>
+                <div id='weather-container'>
+                    <img id='weather-icon'>
+                    <span id='weather-condition'></span>
+                    <span id='temp'></span>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+   <script src='./main.js'></script>
+</body>
+</html>
