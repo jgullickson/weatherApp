@@ -4,7 +4,7 @@ LOCATION = '';
 
 async function getWeatherByLocation(event) {
     console.log(event)
-    let url = `http://api.weatherapi.com/v1/current.json?key=${KEY}&q=${LOCATION}`;
+    let url = `https://api.weatherapi.com/v1/current.json?key=${KEY}&q=${LOCATION}`;
     fetch(url)
         .then(response =>{
             return response.json()
