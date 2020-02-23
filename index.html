@@ -4,18 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>weatherApp</title>
-    <link rel="stylesheet" href="./styles.css" type="text/css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize/materialize.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="./css/styles.css" type="text/css">
 </head>
 <body>
-    <div id="main-container">
-        <header id='app-header'>
-            <h1>weather app</h1>
-        </header>
-        <div id='sub-container'>
+    <div id="main-container" class='container'>
+        <div class='row'>
+            <div id='app-header' class='z-depth-1'>
+                <a href='#'><i class='material-icons'>cloud_queue</i><h1>weather<span class='w2'>info</span></h1></a>
+            </div>
+            <div class='section'>
+            <div id='settings' class='col s12 m3'>
+            <div id='mode' class="section">
+                <ul class="collection">
+                    <h3>Mode</h3>
+                    <a class='collection-item'><li class=''>My Location <i class='material-icons'>gps_fixed</i></li></a>
+                    <a class='collection-item'><li class=''>Search Location <i class='material-icons'>search</i></li></a>
+                </ul>
+            </div>
+            <div id='units' class="section">
+                <ul class="collection">
+                    <h3>Units</h3>
+                    <div class="switch collection-item">
+                        <label>
+                          metric
+                          <input type="checkbox">
+                          <span class="lever"></span>
+                          imperial
+                        </label>
+                      </div>
+                </ul>
+            </div>
+            </div>
+        <div id='sub-container' class='col s12 m9 section'>
             <div id='form-container'>
-                <label for='location'>Enter Location</label>
-                <input type='text' name='location' id='location' onchange="setLocation(event)">
-                <button onclick='getWeatherByLocation(LOCATION)'>Get Weather</button>
+                <div class='input-field'>
+                    <label for='location'>Enter Location</label>
+                    <input type='text' name='location' id='location' onchange="setLocation(event)">
+                    <button class='btn' onclick='getWeatherByLocation(LOCATION)'>Get Weather</button>
+                </div>
             </div>
             <div id='data-container'>
                 <div id='location-container'>
@@ -23,14 +54,35 @@
                     <span id='location-region'></span><span id='location-country'></span>
                 </div>
                 <div id='weather-container'>
-                    <img id='weather-icon'>
-                    <span id='weather-condition'></span>
-                    <span id='temp'></span>
+                    <div class='condition-summary'>
+                        <img id='weather-icon'>
+                        <div>
+                            <div id='weather-condition'></div>
+                            <div id='temp'></div>
+                        </div>
+                    </div>
+                    <div class="condition-details">
+                        <ul id='weather-condition'>
+                            <li id='feel'></li>
+                            <li id='wind'></li>
+                            <li id='uv'></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    
+        </div>
     </div>
-   <script src='./main.js'></script>
+    </div>
+   <script type="text/javascript" src="js/materialize/bin/materialize.min.js"></script>
+   <script src='js/main.js'></script>
+   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // var elems = document.querySelectorAll('select');
+        // var options = document.querySelectorAll('option');
+        // var instances = M.FormSelect.init(elems, options);
+        M.AutoInit();
+    });
+</script>
 </body>
 </html>
