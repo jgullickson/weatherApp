@@ -9098,6 +9098,10 @@ body {
 
 #mode li, #units li {
   font-size: 1.1rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 #mode li i, #units li i {
