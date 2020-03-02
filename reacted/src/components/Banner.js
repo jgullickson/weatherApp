@@ -1,6 +1,4 @@
 import React from 'react';
-
-// Import Materialize
 import M from 'materialize-css';
 
 class Banner extends React.Component {
@@ -39,23 +37,9 @@ const bannerStyle = {
         display: 'block'
     },
     i: {
-        fontSize: '3rem'
+        fontSize: '3rem',
+        display: 'block'
     }
 }
 
 export default Banner;
-
-
-//     h1 {
-//         font-size: 4rem;
-//         user-select: none;
-//         margin: 0 0.25em;
-//         @extend .grey-text, .text-lighten-5;
-//         display: block;
-//     }
-//     i {
-//         font-size: 4rem;
-//         @extend .grey-text, .text-lighten-5;
-//         display: block;
-//     }
-// }
