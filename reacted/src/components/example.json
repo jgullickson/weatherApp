@@ -1,0 +1,41 @@
+{
+    "location": {
+        "name": "Saint Paul",
+        "region": "Minnesota",
+        "country": "United States of America",
+        "lat": 44.94,
+        "lon": -93.09,
+        "tz_id": "America/Chicago",
+        "localtime_epoch": 1583381232,
+        "localtime": "2020-03-04 22:07"
+    },
+    "current": {
+        "last_updated_epoch": 1583380811,
+        "last_updated": "2020-03-04 22:00",
+        "temp_c": 2.8,
+        "temp_f": 37,
+        "is_day": 0,
+        "condition": {
+            "text": "Overcast",
+            "icon": "//cdn.weatherapi.com/weather/64x64/night/122.png",
+            "code": 1009
+        },
+        "wind_mph": 13.6,
+        "wind_kph": 22,
+        "wind_degree": 140,
+        "wind_dir": "SE",
+        "pressure_mb": 1011,
+        "pressure_in": 30.3,
+        "precip_mm": 0,
+        "precip_in": 0,
+        "humidity": 64,
+        "cloud": 100,
+        "feelslike_c": -2,
+        "feelslike_f": 28.5,
+        "vis_km": 16,
+        "vis_miles": 9,
+        "uv": 0,
+        "gust_mph": 16.6,
+        "gust_kph": 26.6
+    }
+}
