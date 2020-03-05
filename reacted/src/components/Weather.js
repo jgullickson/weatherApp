@@ -1,7 +1,7 @@
 import React from 'react';
 import M from 'materialize-css';
 import { connect } from 'react-redux';
-import { toggleUnits, getWeatherByManualLocation } from '../redux/actions';
+import { toggleUnits, getWeatherByManualLocation, getWeatherByGeoLocation } from '../redux/actions';
 
 class Weather extends React.Component {
     constructor(props){
@@ -29,10 +29,15 @@ class Weather extends React.Component {
                             className='col s12'
                             />
                         <button 
-                            className='btn green lighten-2 col s12 m2'
+                            className='btn green lighten-2 col s12 m3'
                             onClick={() => this.props.getWeatherByManualLocation(this.state.editorText)}
                             style={weatherStyle.button}
                             >Get Weather</button>
+                        <button 
+                            className='btn purple lighten-2 col s12 m3'
+                            onClick={() => this.props.getWeatherByGeoLocation()}
+                            style={weatherStyle.button}
+                            >GeoLocation</button>
                     </div>
                 </div>
                 <div id='data-container'>
@@ -63,18 +68,18 @@ class Weather extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    const { data, units, key } = state;
+    const { data, units } = state;
     return { 
         data: data,
-        units: units,
-        key: key
+        units: units
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
         toggleUnits: () => dispatch(toggleUnits()),
-        getWeatherByManualLocation: (updatedLocation) => { dispatch(getWeatherByManualLocation(updatedLocation)) }
+        getWeatherByManualLocation: (location) => dispatch(getWeatherByManualLocation(location)),
+        getWeatherByGeoLocation: () => dispatch(getWeatherByGeoLocation())
     }
 }
 
