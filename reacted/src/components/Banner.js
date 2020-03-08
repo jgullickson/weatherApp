@@ -1,5 +1,6 @@
 import React from 'react';
 import M from 'materialize-css';
+import logo from '../wizard.svg';
 
 class Banner extends React.Component {
     constructor(props){
@@ -12,8 +13,14 @@ class Banner extends React.Component {
         return (
             <div id='app-header' className='z-depth-1 indigo lighten-2' style={bannerStyle}>
                 <a href='#' style={bannerStyle.a} className='grey-text text-lighten-5'>
-                    <i className='material-icons' style={bannerStyle.i}>cloud_queue</i>
-                    <h1 className='grey-text text-lighten-5' style={bannerStyle.h1}>weather<span className='green-text text-lighten-2'>info</span></h1>
+                    <img 
+                        src={logo} 
+                        id='logo' 
+                        alt='logo'
+                        style={bannerStyle.logo}
+                        ></img>
+                    {/* <i className='material-icons' style={bannerStyle.i}>cloud_queue</i> */}
+                    <h1 className='grey-text text-lighten-5' style={bannerStyle.h1}>weather<span className='green-text text-lighten-2'>wizard</span></h1>
                 </a>
             </div>   
         )
@@ -39,6 +46,10 @@ const bannerStyle = {
     i: {
         fontSize: '3rem',
         display: 'block'
+    },
+    logo: {
+        height: '3rem',
+        marginBottom: '10px'
     }
 }
 

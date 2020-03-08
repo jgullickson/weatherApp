@@ -5,6 +5,13 @@ export const toggleUnits = () => {
     }
 }
 
+export const TOGGLE_MODE = 'TOGGLE_MODE';
+export const toggleMode = () => {
+    return {
+        type: TOGGLE_MODE
+    }
+}
+
 export const RECEIVE_DATA = 'RECEIVE_DATA';
 export const receiveData = (data) => {
     return {
