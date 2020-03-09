@@ -9,3 +9,16 @@
 //         height: 100vh;
 //     }
 // }
+
+#control-container {
+    @media (max-width: 500px) {
+        position: absolute;
+        bottom: 0px;
+    }
+}
+
+@keyframes spin {
+    to {
+      transform: rotate(360deg)
+    }
+  }

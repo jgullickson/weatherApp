@@ -12,6 +12,13 @@ export const toggleMode = () => {
     }
 }
 
+export const REQUEST_DATA = 'REQUEST_DATA';
+export const requestData = () => {
+    return {
+        type: REQUEST_DATA
+    }
+}
+
 export const RECEIVE_DATA = 'RECEIVE_DATA';
 export const receiveData = (data) => {
     return {
@@ -21,11 +28,12 @@ export const receiveData = (data) => {
 }
 
 export const GET_WEATHER_BY_MANUAL_LOCATION = 'GET_WEATHER_BY_MANUAL_LOCATION';
-export const getWeatherByManualLocation = (location) => {
+export const getWeatherByManualLocation = (location, days = 7) => {
     return (dispatch, getState) => {
+        dispatch(requestData());
         const { key } = getState();
-        let url = `https://api.weatherapi.com/v1/current.json?key=${key}&q=${location}`;
-        fetch(url)
+        let url_cur = `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${location}&days=${days}`;
+        fetch(url_cur)
             .then(response => response.json())
             .then(data => {
                 dispatch(receiveData(data))
@@ -35,8 +43,9 @@ export const getWeatherByManualLocation = (location) => {
 }
 
 export const GET_WEATHER_BY_GEOLOCATION = 'GET_WEATHER_BY_GEOLOCATION';
-export const getWeatherByGeoLocation = () => {
+export const getWeatherByGeoLocation = (days = 7) => {
     return (dispatch, getState) => {
+        dispatch(requestData());
         let options = {
             enableHighAccuracy: true
         };
@@ -45,7 +54,7 @@ export const getWeatherByGeoLocation = () => {
             const { latitude, longitude } = geoLocationObject.coords;
             const { key } = getState();
             console.log(`lat: ${latitude}, lon: ${longitude}`)
-            let url = `https://api.weatherapi.com/v1/current.json?key=${key}&q=${latitude},${longitude}`;
+            let url = `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${latitude},${longitude}&days=${days}`;
             fetch(url)
                 .then(response => response.json())
                 .then(data => {

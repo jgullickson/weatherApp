@@ -1,1 +1,21 @@
-/* No CSS *//*# sourceMappingURL=styles.css.map */
+@media (max-width: 500px) {
+  #control-container {
+    position: absolute;
+    bottom: 0px;
+  }
+}
+
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/*# sourceMappingURL=styles.css.map */
