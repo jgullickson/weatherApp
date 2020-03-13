@@ -1,0 +1,14 @@
+@import '../../node_modules/materialize-css/sass/materialize.scss';
+#control-container {
+    display: flex;
+    flex-direction: column;
+    button {
+        @extend .btn;
+        width: 100%;
+        display: block;
+        i {
+            display: inline-block;
+            vertical-align: bottom;
+        }
+    }
+}

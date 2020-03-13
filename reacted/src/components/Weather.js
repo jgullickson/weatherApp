@@ -1,26 +1,20 @@
 import React from 'react';
-import M from 'materialize-css';
 import { connect } from 'react-redux';
 import { toggleUnits, toggleMode, getWeatherByManualLocation, getWeatherByGeoLocation } from '../redux/actions';
+import Forecast from './Forecast';
+import Controls from './Controls'
+import '../css/Weather.css';
 
 class Weather extends React.Component {
     constructor(props){
         super(props)
-        this.handleChange = this.handleChange.bind(this);
-    }
-    componentDidMount(){
-        M.AutoInit();
-        this.setState( { editorText: ''} );
-        this.props.getWeatherByGeoLocation();
-    }
-    handleChange(e){
-        this.setState( { editorText: e.target.value } )
     }
     render(){
         return (
-            <div id='weather-component-container' className='col s12 m9 section container' style={weatherStyle}>
+            <div id='weather-component-container' className='section' style={weatherStyle}>
                 {this.props.isFetching ? <div style={weatherStyle.spinner.container}><div id='fetchSpinner' style={weatherStyle.spinner}/></div> : null}
-                <div id='display-container' style={weatherStyle.display}>
+                <div className='row'>
+                <div id='display-container' style={weatherStyle.display} className='col s12 m8'>
                     {this.props.data.location && this.props.data.current &&
                     <div>
                             <div id='location-container'>
@@ -42,21 +36,21 @@ class Weather extends React.Component {
                                     </div>
                                 </div>
                                 <div className="condition-details">
-                                    <ul id='weather-condition' className='collection'>
-                                        <li id='feel' className='collection-item'>
+                                    <ul id='weather-condition' className=''>
+                                        <li id='feel' className=''>
                                             <span className='label' style={weatherStyle.condition.label}>Feels like: </span>
                                             {this.props.units == 'imperial' && this.props.data.current.feelslike_f}
                                             {this.props.units == 'imperial' && <span>&deg;F</span>}
                                             {this.props.units == 'metric' && this.props.data.current.feelslike_c}
                                             {this.props.units == 'metric' && <span>&deg;C</span>}
                                         </li>
-                                        <li id='wind' className='collection-item'>
+                                        <li id='wind' className=''>
                                             <span className='label' style={weatherStyle.condition.label}>Wind: </span>
                                             {this.props.units == 'imperial' && this.props.data.current.wind_mph + ' mph '}
                                             {this.props.units == 'metric' && this.props.data.current.wind_kph + ' kph '}
                                             <span style={weatherStyle.condition.wind_dir}>{this.props.data.current.wind_dir}</span>
                                         </li>
-                                        <li id='uv' className='collection-item'>
+                                        <li id='uv' className=''>
                                             <span className='label' style={weatherStyle.condition.label}>UV index: </span>
                                             {this.props.data.current.uv}
                                         </li>
@@ -65,47 +59,10 @@ class Weather extends React.Component {
                             </div>
                         </div>
                     }
-
                 </div>
-                <div id='control-container' style={weatherStyle.control}>
-                    <div className='input-field row'>
-                        {/* MANUAL FORM */}
-                        { this.props.mode === 'manual' &&
-                            <div>
-                            <label htmlFor='location'>Enter Location</label>
-                            <input 
-                                type='text'
-                                name='location'
-                                id='location'
-                                onChange={this.handleChange}
-                                className='col s12'
-                                />
-                            <button 
-                                className='btn green lighten-2 col s12 m3'
-                                onClick={() => this.props.getWeatherByManualLocation(this.state.editorText)}
-                                style={weatherStyle.button}
-                                >Get Weather</button>
-                            </div>
-                        }
-                        {this.props.mode === 'geo' &&
-                            <button 
-                            className='btn purple lighten-2 col s12 m3'
-                            onClick={() => this.props.getWeatherByGeoLocation()}
-                            style={weatherStyle.button}
-                            >Refresh <i className='material-icons' style={weatherStyle.button.icon}>refresh</i></button>
-                        }
-                            <button 
-                                className='btn red lighten-2 col s12 m3'
-                                onClick={() => this.props.toggleMode()}
-                                style={weatherStyle.button}
-                                >Toggle Mode</button>
-                            <button 
-                                className='btn red lighten-2 col s12 m3'
-                                onClick={() => this.props.toggleUnits()}
-                                style={weatherStyle.button}
-                                >Toggle Units</button>
-                    </div>
+                <Controls cols='col s12 m3'/>
                 </div>
+                <Forecast cols='col s12'/>
             </div>
         )
     }
@@ -134,22 +91,18 @@ const weatherStyle = {
     spinner: {
         height: '100px',
         width: '100px',
-        border: '5px solid rgba(255,255,255,0.3)',
+        // border: '5px solid rgba(255,255,255,0.3)',
+        border: '5px solid #35353575',
         borderTopColor: '#81c683',
         borderRadius: '50%',
-        zIndex: '100',
+        zIndex: '1',
         animation: 'spin 1s linear infinite',
         container: {
             position: 'absolute',
             left: '50%',
-            transform: 'translate(-50%)'
-        }
-    },
-    button: {
-        display: 'block',
-        verticalAlign: 'bottom',
-        icon: {
-            verticalAlign: 'bottom'
+            transform: 'translate(-50%)',
+            // backgroundColor: 'black',
+            // padding: '2em',
         }
     },
     control: {

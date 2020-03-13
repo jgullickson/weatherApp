@@ -1,0 +1,6 @@
+@import '../../node_modules/materialize-css/sass/materialize.scss';
+
+.app-container {
+    @extend .container;
+   background-color: rgba(207, 214, 218, 0.1);
+}

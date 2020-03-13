@@ -10,6 +10,11 @@
 //     }
 // }
 
+body {
+  background-color: #272626;
+  color: whitesmoke;
+}
+
 #control-container {
     @media (max-width: 500px) {
         position: absolute;

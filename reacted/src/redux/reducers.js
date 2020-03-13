@@ -7,7 +7,9 @@ const defaultState = {
     units: 'imperial',
     mode: 'geo',
     isFetching: false,
-    data: {}
+    data: {
+        forecast: {}
+    }
 }
 
 const mainReducer = (state = defaultState, action) => {
