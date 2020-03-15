@@ -2,11 +2,56 @@
     #forecast-container {
         display: flex;
         flex-direction: row;
+        width: 100%;
+        overflow: scroll;
     }
     .day {
-        flex-basis: 1;
-        flex-grow: 1;
-        max-width: 100px;
+        // flex-basis: 1;
+        // flex-grow: 0;
+        min-width: 150px;
+        width: 150px;
+        height: 300px;
         text-align: center;
-        padding: 1em
+        padding: 1em;
+
+        i {
+            display: block;
+            height: 24px;
+        }
+
+        .card-title {
+            font-size: 1em !important;
+            display: block;
+            position: absolute;
+            right: 5%;
+            bottom: 0px;
+        }
+        .card-reveal {
+            padding: 0 !important;
+            text-align: left;
+            color: #353535;
+
+            .collection {
+                margin: 0;
+                .collection-item {
+                    font-size: 1em;
+                    vertical-align: bottom;
+                    img {
+                        height: 24px;
+                        display: inline-block;
+                        vertical-align: bottom;
+                    }
+                }
+            }
+            .label {
+                display: inline-block;
+                font-weight: bold;
+                margin: 0 5px;
+            }
+            .uv {
+                color: darkviolet;
+            }
+        }
     }
+
+    

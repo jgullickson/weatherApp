@@ -1,6 +1,6 @@
 import React from 'react';
 import M from 'materialize-css';
-import logo from '../wizard.svg';
+import logo from '../images/wizard.svg';
 
 class Banner extends React.Component {
     constructor(props){
