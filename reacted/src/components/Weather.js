@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { toggleUnits, toggleMode, getWeatherByManualLocation, getWeatherByGeoLocation } from '../redux/actions';
 import Forecast from './Forecast';
 import Controls from './Controls'
-import '../css/Weather.css';
+// import '../css/Weather.css';
 
 class Weather extends React.Component {
     constructor(props){
@@ -11,20 +11,20 @@ class Weather extends React.Component {
     }
     render(){
         return (
-            <div id='weather-component-container' className='section' style={weatherStyle}>
-                {this.props.isFetching ? <div style={weatherStyle.spinner.container}><div id='fetchSpinner' style={weatherStyle.spinner}/></div> : null}
+            <div id='weather-component-container' className='section'>
+                {this.props.isFetching ? <div id='spinner-container'><div id='fetchSpinner'/></div> : null}
                 <div className='row'>
-                <div id='display-container' style={weatherStyle.display} className='col s12 m8'>
+                <div id='display-container' className='col s12 m8'>
                     {this.props.data.location && this.props.data.current &&
-                    <div>
+                    <div className='card-content'>
                             <div id='location-container'>
-                                <h2 id='location-title' style={weatherStyle.condition.h2}>{this.props.data.location.name}</h2>
+                                <h2 id='location-title' >{this.props.data.location.name}</h2>
                                 <span id='location-region'>{this.props.data.location.region}, </span>
                                 <span id='location-country'>{this.props.data.location.country}</span>
                             </div>
                             <div id='weather-container'>
-                                <div className='condition-summary' style={weatherStyle.condition}>
-                                    <img id='weather-icon' src={this.props.data.current.condition.icon} style={weatherStyle.condition.icon}/>
+                                <div className='condition-summary' >
+                                    <img id='weather-icon' src={this.props.data.current.condition.icon}/>
                                     <div>
                                         <div id='weather-condition'>{this.props.data.current.condition.text}</div>
                                         <div id='temp'>
@@ -38,20 +38,20 @@ class Weather extends React.Component {
                                 <div className="condition-details">
                                     <ul id='weather-condition' className=''>
                                         <li id='feel' className=''>
-                                            <span className='label' style={weatherStyle.condition.label}>Feels like: </span>
+                                            <span className='label' >Feels like: </span>
                                             {this.props.units == 'imperial' && this.props.data.current.feelslike_f}
                                             {this.props.units == 'imperial' && <span>&deg;F</span>}
                                             {this.props.units == 'metric' && this.props.data.current.feelslike_c}
                                             {this.props.units == 'metric' && <span>&deg;C</span>}
                                         </li>
                                         <li id='wind' className=''>
-                                            <span className='label' style={weatherStyle.condition.label}>Wind: </span>
+                                            <span className='label'>Wind: </span>
                                             {this.props.units == 'imperial' && this.props.data.current.wind_mph + ' mph '}
                                             {this.props.units == 'metric' && this.props.data.current.wind_kph + ' kph '}
-                                            <span style={weatherStyle.condition.wind_dir}>{this.props.data.current.wind_dir}</span>
+                                            <span>{this.props.data.current.wind_dir}</span>
                                         </li>
                                         <li id='uv' className=''>
-                                            <span className='label' style={weatherStyle.condition.label}>UV index: </span>
+                                            <span className='label'>UV index: </span>
                                             {this.props.data.current.uv}
                                         </li>
                                     </ul>
@@ -60,7 +60,7 @@ class Weather extends React.Component {
                         </div>
                     }
                 </div>
-                <Controls cols='col s12 m3'/>
+                <Controls cols='col s12 m4'/>
                 </div>
                 <Forecast cols='col s12'/>
             </div>
@@ -84,47 +84,6 @@ const mapDispatchToProps = (dispatch) => {
         getWeatherByManualLocation: (location) => dispatch(getWeatherByManualLocation(location)),
         getWeatherByGeoLocation: () => dispatch(getWeatherByGeoLocation()),
         toggleMode: () => dispatch(toggleMode())
-    }
-}
-
-const weatherStyle = {
-    spinner: {
-        height: '100px',
-        width: '100px',
-        // border: '5px solid rgba(255,255,255,0.3)',
-        border: '5px solid #35353575',
-        borderTopColor: '#81c683',
-        borderRadius: '50%',
-        zIndex: '1',
-        animation: 'spin 1s linear infinite',
-        container: {
-            position: 'absolute',
-            left: '50%',
-            transform: 'translate(-50%)',
-            // backgroundColor: 'black',
-            // padding: '2em',
-        }
-    },
-    control: {
-        bottom: 0
-    },
-    condition: {
-        display: 'flex',
-        fontSize: '2em',
-        h2: {
-            margin: 0
-        },
-        icon: {
-            maxHeight: '64px',
-            width: 'auto'
-        },
-        label: {
-            fontWeight: 'bold'
-        },
-        wind_dir: {
-            color: 'rgb(230, 63, 63)',
-            fontWeight: 'bold'
-        }
     }
 }
 

@@ -2,7 +2,7 @@ import React from 'react';
 import M from 'materialize-css';
 import { connect } from 'react-redux';
 import moment from 'moment';
-import '../css/Forecast.css';
+// import '../css/Forecast.css';
 import high_arrow from '../images/high_arrow.svg';
 import low_arrow from '../images/low_arrow.svg';
 import drop from '../images/raindrop.svg';

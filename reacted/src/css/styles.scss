@@ -1,17 +1,12 @@
-// @import 'materialize-css/dist/css/materialize.min.css';
-
-// html {
-//     background-color: #17171b;
-// }
-
-// #weather-component-container {
-//     @media (max-width: 400px) {
-//         height: 100vh;
-//     }
-// }
+@import '../../node_modules/materialize-css/sass/materialize.scss';
+@import './App.scss';
+@import './Controls.scss';
+@import './Forecast.scss';
+@import './Weather.scss';
+@import './Banner.scss';
 
 body {
-  background-color: #272626;
+  background-color: #262627;
   color: whitesmoke;
 }
 
@@ -21,9 +16,3 @@ body {
         bottom: 0px;
     }
 }
-
-@keyframes spin {
-    to {
-      transform: rotate(360deg)
-    }
-  }

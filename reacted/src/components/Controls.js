@@ -1,7 +1,7 @@
 import React from 'react';
 import M from 'materialize-css';
 import { connect } from 'react-redux';
-import '../css/Controls.css';
+// import '../css/Controls.css';
 import { toggleUnits, toggleMode, getWeatherByManualLocation, getWeatherByGeoLocation } from '../redux/actions';
 
 class Controls extends React.Component {
