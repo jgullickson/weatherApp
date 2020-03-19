@@ -1,9 +1,9 @@
 @import '../../node_modules/materialize-css/sass/materialize.scss';
-@import './App.scss';
-@import './Controls.scss';
-@import './Forecast.scss';
-@import './Weather.scss';
-@import './Banner.scss';
+@import './components/App.scss';
+@import './components/Controls.scss';
+@import './components/Forecast.scss';
+@import './components/Weather.scss';
+@import './components/Banner.scss';
 
 body {
   background-color: #262627;

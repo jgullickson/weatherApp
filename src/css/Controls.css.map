@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,kBAAkB,CAAC;EACf,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;CAUzB;;AAZD,AAGI,kBAHc,CAGd,MAAM,CAAC;EAEH,KAAK,EAAE,IAAI;EACX,OAAO,EAAE,KAAK;CAKjB;;AAXL,AAOQ,kBAPU,CAGd,MAAM,CAIF,CAAC,CAAC;EACE,OAAO,EAAE,YAAY;EACrB,cAAc,EAAE,MAAM;CACzB",
-    "sources": [
-        "Controls.scss"
-    ],
-    "names": [],
-    "file": "Controls.css"
-}
