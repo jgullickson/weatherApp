@@ -49,8 +49,11 @@ export const getWeatherByManualLocation = (location, days = 7) => {
             console.log(data.error)
             Swal.fire({
                 title: 'Oops!',
-                text: `You searched for "${location}". ${data.error.message} Please check spelling or try another location. ERROR CODE: ${data.error.code}`,
-                icon: "error"
+                icon: "error",
+                html: `You searched for <b>"${location}"</b>.
+                    <br>${data.error.message}
+                    <br>Please check spelling or try another location.
+                    <br>ERROR CODE: ${data.error.code}`,
             })
             dispatch(toggleSpinner())
         } else {
