@@ -29,11 +29,16 @@ class Controls extends React.Component {
                                 type='text'
                                 name='location'
                                 id='location'
+                                value={this.state.editorText}
                                 onChange={this.handleChange}
                                 className='col s12'
                                 />
                             <button 
-                                onClick={() => this.props.getWeatherByManualLocation(this.state.editorText)}
+                                onClick={() => {
+                                    this.props.getWeatherByManualLocation(this.state.editorText);
+                                    this.setState( { editorText: ''} );
+                                }
+                                }
                                 
                                 >Get Weather</button>
                             </div>

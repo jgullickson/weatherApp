@@ -4,6 +4,10 @@
         flex-direction: row;
         width: 100%;
         overflow: scroll;
+        @media (max-width: 400px) {
+            flex-direction: column;
+            overflow: hidden;
+        }
     }
     .day {
         // flex-basis: 1;
@@ -16,6 +20,9 @@
         color: rgba(245, 245, 245, 0.897);
         background-color: $color2;
         margin: 0.25em;
+        @media (max-width: 400px) {
+            width: 100%;
+        }
 
         i {
             display: block;

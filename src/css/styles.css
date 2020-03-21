@@ -6530,9 +6530,6 @@ input[type=range]::-ms-thumb {
     text-align: center;
     margin-top: 1.2rem; } }
 
-.app-container {
-  padding: 2em; }
-
 #control-container {
   display: flex;
   flex-direction: column; }
@@ -6559,12 +6556,19 @@ input[type=range]::-ms-thumb {
     #control-container input:focus {
       background-color: whitesmoke;
       color: #f15622; }
+  @media (max-width: 400px) {
+    #control-container {
+      padding: 0; } }
 
 #forecast-container {
   display: flex;
   flex-direction: row;
   width: 100%;
   overflow: scroll; }
+  @media (max-width: 400px) {
+    #forecast-container {
+      flex-direction: column;
+      overflow: hidden; } }
 
 .day {
   min-width: 150px;
@@ -6575,6 +6579,9 @@ input[type=range]::-ms-thumb {
   color: rgba(245, 245, 245, 0.897);
   background-color: #7a93ac;
   margin: 0.25em; }
+  @media (max-width: 400px) {
+    .day {
+      width: 100%; } }
   .day i {
     display: block;
     height: 24px; }
@@ -6644,7 +6651,8 @@ input[type=range]::-ms-thumb {
 #display-container {
   color: rgba(245, 245, 245, 0.897);
   background-color: #7a93ac;
-  padding: 2rem; }
+  padding: 2rem;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2); }
 
 #location-title {
   margin: 0; }
@@ -6683,7 +6691,19 @@ body {
   background-color: #92bcea;
   color: whitesmoke; }
 
-@media (max-width: 500px) {
-  #control-container {
-    position: absolute;
-    bottom: 0px; } }
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: whitesmoke;
+  background-color: transparent;
+  -webkit-background-color: transparent;
+  background: none; }
+
+input {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0), inset 0 0 0 100px tomato; }
