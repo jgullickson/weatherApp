@@ -60,7 +60,7 @@ class Weather extends React.Component {
                         </div>
                     }
                 </div>
-                <Controls cols='col s12 m5'/>
+                <Controls cols='col s12 m6'/>
                 </div>
                 <Forecast cols='col s12'/>
             </div>
