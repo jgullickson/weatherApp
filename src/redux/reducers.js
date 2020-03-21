@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware } from 'redux';
-import { TOGGLE_UNITS, TOGGLE_MODE, REQUEST_DATA, RECEIVE_DATA } from './actions';
+import { TOGGLE_UNITS, TOGGLE_MODE, REQUEST_DATA, RECEIVE_DATA, TOGGLE_SPINNER } from './actions';
 import ReduxThunk from 'redux-thunk';
 
 const defaultState = {
@@ -23,6 +23,8 @@ const mainReducer = (state = defaultState, action) => {
         case RECEIVE_DATA:
             console.log('receiving data');
             return Object.assign({}, state, { isFetching: false, data: action.data });
+        case TOGGLE_SPINNER:
+            return Object.assign({}, state, { isFetching: !state.isFetching })
         default:
             return state;
     }

@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 
 export const TOGGLE_UNITS = 'TOGGLE_UNITS';
 export const toggleUnits = () => {
@@ -28,21 +29,34 @@ export const receiveData = (data) => {
     }
 }
 
+export const TOGGLE_SPINNER = 'TOGGLE_SPINNER';
+export const toggleSpinner = () => {
+    return {
+        type: TOGGLE_SPINNER,
+    }
+}
+
 export const GET_WEATHER_BY_MANUAL_LOCATION = 'GET_WEATHER_BY_MANUAL_LOCATION';
 export const getWeatherByManualLocation = (location, days = 7) => {
-    return (dispatch, getState) => {
+    return async (dispatch, getState) => {
         dispatch(requestData());
         const { key } = getState();
         let url_cur = `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${location}&days=${days}`;
-        let payload;
-        let success = true;
-        fetch(url_cur)
-            .then(response => response.json())
-            .then(data => {
-                payload = data;
-                dispatch(receiveData(payload))
-                console.log(getState())
-            }).catch(error => console.error(error))
+        let data = await fetch(url_cur).then(response => response.json()).then(data => {return data;}).catch(error => console.error(error))
+        console.log('DATA:')
+        console.log(data)
+        if (data.error){
+            console.log(data.error)
+            Swal.fire({
+                title: 'Oops!',
+                text: `You searched for "${location}". ${data.error.message} Please check spelling or try another location. ERROR CODE: ${data.error.code}`,
+                icon: "error"
+            })
+            dispatch(toggleSpinner())
+        } else {
+            dispatch(receiveData(data))
+        }
+        // console.log(getState())
     }
 }
 
