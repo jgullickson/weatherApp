@@ -1,3 +1,4 @@
+
 export const TOGGLE_UNITS = 'TOGGLE_UNITS';
 export const toggleUnits = () => {
     return {
@@ -33,12 +34,15 @@ export const getWeatherByManualLocation = (location, days = 7) => {
         dispatch(requestData());
         const { key } = getState();
         let url_cur = `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${location}&days=${days}`;
+        let payload;
+        let success = true;
         fetch(url_cur)
             .then(response => response.json())
             .then(data => {
-                dispatch(receiveData(data))
+                payload = data;
+                dispatch(receiveData(payload))
                 console.log(getState())
-            })
+            }).catch(error => console.error(error))
     }
 }
 

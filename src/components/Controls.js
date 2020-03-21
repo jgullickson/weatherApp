@@ -3,6 +3,7 @@ import M from 'materialize-css';
 import { connect } from 'react-redux';
 // import '../css/Controls.css';
 import { toggleUnits, toggleMode, getWeatherByManualLocation, getWeatherByGeoLocation } from '../redux/actions';
+import Swal from 'sweetalert2';
 
 class Controls extends React.Component {
     constructor(props){
@@ -35,8 +36,16 @@ class Controls extends React.Component {
                                 />
                             <button 
                                 onClick={() => {
-                                    this.props.getWeatherByManualLocation(this.state.editorText);
-                                    this.setState( { editorText: ''} );
+                                    if (this.state.editorText === ''){
+                                        Swal.fire({
+                                            title: "Where now?",
+                                            text: "Please specify a location",
+                                            icon: "question"
+                                        })
+                                    } else {
+                                        this.props.getWeatherByManualLocation(this.state.editorText);
+                                        this.setState( { editorText: ''} );
+                                    }
                                 }
                                 }
                                 
