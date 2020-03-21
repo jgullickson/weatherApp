@@ -1,19 +1,30 @@
 
     #forecast-container {
+        // @extend .row;
+        background-color: rgba(245, 245, 245, 0.185);
+        padding: 2em;
+        box-sizing: border-box;
         display: flex;
-        flex-direction: row;
         width: 100%;
-        overflow: scroll;
+        max-width: 100%;
+        flex-wrap: wrap;
+        // overflow: scroll;
+        // border: 2px solid rgba(245, 245, 245, 0.185);
         @media (max-width: 400px) {
+            display: flex;
             flex-direction: column;
             overflow: hidden;
+            padding: 0;
+            background-color: transparent;
         }
     }
     .day {
         // flex-basis: 1;
         // flex-grow: 0;
         min-width: 150px;
-        width: 150px;
+        width: 15%;
+        // @extend .col, .s2;
+        box-sizing: border-box !important;
         height: 300px;
         text-align: center;
         padding: 1em;

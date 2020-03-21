@@ -39,7 +39,7 @@ class Forecast extends React.Component {
                                     <li className='collection-item'><span className='label'><img src={high_arrow}/></span>{this.props.units === 'imperial' ? f.day.maxtemp_f : f.day.maxtemp_c}&deg;{this.props.units === 'imperial' ? 'F' : 'C'}</li>
                                     <li className='collection-item'><span className='label'><img src={low_arrow}/></span>{this.props.units === 'imperial' ? f.day.mintemp_f : f.day.mintemp_c}&deg;{this.props.units === 'imperial' ? 'F' : 'C'}</li>
                                     <li className='collection-item'><span className='label'><img src={humidity}/></span>{f.day.avghumidity + '%'}</li>
-                                    <li className='collection-item'><span className='label'><img src={drop}/></span>{this.props.units === 'imperial' ? f.day.totalprecip_in : f.day.totalprecip_mm}&deg;{this.props.units === 'imperial' ? 'in' : 'mm'}</li>
+                                    <li className='collection-item'><span className='label'><img src={drop}/></span>{this.props.units === 'imperial' ? f.day.totalprecip_in : f.day.totalprecip_mm}{this.props.units === 'imperial' ? 'in' : 'mm'}</li>
                                     <li className='collection-item'><span className='label'><img src={wind}/></span>{this.props.units === 'imperial' ? f.day.maxwind_mph : f.day.mapwind_kph}{this.props.units === 'imperial' ? 'mph' : 'kph'}</li>
                                     <li className='collection-item'><span className='label uv'>UV</span>{f.day.uv}</li>
                                 </ul>
