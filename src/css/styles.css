@@ -6610,16 +6610,18 @@ input[type=range]::-ms-thumb {
 #fetchSpinner {
   height: 100px;
   width: 100px;
-  border: 5px solid #617073;
-  border-top-color: #f15622;
+  border: 5px solid rgba(245, 245, 245, 0.774);
+  border-top-color: rgba(241, 86, 34, 0.7);
   border-radius: 50%;
-  z-index: 1;
-  animation: spin 1s linear infinite; }
+  z-index: 100;
+  animation: spin 1s ease-in-out infinite; }
 
 #spinner-container {
   position: absolute;
-  left: 50%;
-  transform: translate(-50%); }
+  left: 50vw;
+  top: 30vh;
+  transform: translate(-50%, -50%);
+  z-index: 100; }
 
 @keyframes spin {
   to {
