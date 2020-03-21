@@ -7,13 +7,6 @@ export const toggleUnits = () => {
     }
 }
 
-export const TOGGLE_MODE = 'TOGGLE_MODE';
-export const toggleMode = () => {
-    return {
-        type: TOGGLE_MODE
-    }
-}
-
 export const REQUEST_DATA = 'REQUEST_DATA';
 export const requestData = () => {
     return {
@@ -22,10 +15,11 @@ export const requestData = () => {
 }
 
 export const RECEIVE_DATA = 'RECEIVE_DATA';
-export const receiveData = (data) => {
+export const receiveData = (data, query) => {
     return {
         type: RECEIVE_DATA,
-        data
+        data,
+        query
     }
 }
 
@@ -36,6 +30,31 @@ export const toggleSpinner = () => {
     }
 }
 
+export const REFRESH = 'REFRESH';
+export const refresh = () => {
+    return async (dispatch, getState) => {
+        dispatch(requestData());
+        const { last_query } = getState();
+        let data = await fetch(last_query)
+                    .then(response => response.json())
+                    .then(data => { return data })
+                    .catch(error => console.error(error));
+        if (data.error){
+            console.log(data.error)
+            Swal.fire({
+                title: 'Oops!',
+                icon: "error",
+                html: `<br>${data.error.message}
+                    <br>ERROR CODE: ${data.error.code}`,
+            })
+            dispatch(toggleSpinner())
+        } else {
+            let query = last_query;
+            dispatch(receiveData(data, query))
+        }
+    }
+}
+
 export const GET_WEATHER_BY_MANUAL_LOCATION = 'GET_WEATHER_BY_MANUAL_LOCATION';
 export const getWeatherByManualLocation = (location, days = 7) => {
     return async (dispatch, getState) => {
@@ -43,8 +62,6 @@ export const getWeatherByManualLocation = (location, days = 7) => {
         const { key } = getState();
         let url_cur = `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${location}&days=${days}`;
         let data = await fetch(url_cur).then(response => response.json()).then(data => {return data;}).catch(error => console.error(error))
-        console.log('DATA:')
-        console.log(data)
         if (data.error){
             console.log(data.error)
             Swal.fire({
@@ -57,7 +74,8 @@ export const getWeatherByManualLocation = (location, days = 7) => {
             })
             dispatch(toggleSpinner())
         } else {
-            dispatch(receiveData(data))
+            let query = url_cur;
+            dispatch(receiveData(data, query))
         }
         // console.log(getState())
     }
@@ -79,7 +97,8 @@ export const getWeatherByGeoLocation = (days = 7) => {
             fetch(url)
                 .then(response => response.json())
                 .then(data => {
-                    dispatch(receiveData(data))
+                    let query = url;
+                    dispatch(receiveData(data, query))
                     console.log(getState())
                 })
         }

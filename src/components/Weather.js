@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { toggleUnits, toggleMode, getWeatherByManualLocation, getWeatherByGeoLocation } from '../redux/actions';
+import { toggleUnits, getWeatherByManualLocation, getWeatherByGeoLocation } from '../redux/actions';
 import Forecast from './Forecast';
 import Controls from './Controls'
 // import '../css/Weather.css';
@@ -82,8 +82,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         toggleUnits: () => dispatch(toggleUnits()),
         getWeatherByManualLocation: (location) => dispatch(getWeatherByManualLocation(location)),
-        getWeatherByGeoLocation: () => dispatch(getWeatherByGeoLocation()),
-        toggleMode: () => dispatch(toggleMode())
+        getWeatherByGeoLocation: () => dispatch(getWeatherByGeoLocation())
     }
 }
 

@@ -2,7 +2,7 @@ import React from 'react';
 import M from 'materialize-css';
 import { connect } from 'react-redux';
 // import '../css/Controls.css';
-import { toggleUnits, toggleMode, getWeatherByManualLocation, getWeatherByGeoLocation } from '../redux/actions';
+import { toggleUnits, getWeatherByManualLocation, getWeatherByGeoLocation, refresh } from '../redux/actions';
 import Swal from 'sweetalert2';
 
 class Controls extends React.Component {
@@ -12,8 +12,10 @@ class Controls extends React.Component {
     }
     componentDidMount(){
         M.AutoInit();
-        this.setState( { editorText: ''} );
         this.props.getWeatherByGeoLocation();
+    }
+    componentWillMount(){
+        this.setState( { editorText: ''} );
     }
     handleChange(e){
         this.setState( { editorText: e.target.value } )
@@ -22,8 +24,6 @@ class Controls extends React.Component {
         return(
             <div id='control-container' className={this.props.cols}>
                     <div className='input-field'>
-                        {/* MANUAL FORM */}
-                        { this.props.mode === 'manual' &&
                             <div>
                             <label htmlFor='location'>Enter Location</label>
                             <input 
@@ -51,18 +51,12 @@ class Controls extends React.Component {
                                 
                                 >Get Weather</button>
                             </div>
-                        }
-                        {this.props.mode === 'geo' &&
+                        
                             <button 
-                            onClick={() => this.props.getWeatherByGeoLocation()}
+                            onClick={() => this.props.refresh()}
                             
                             >Refresh <i className='material-icons'>refresh</i></button>
-                        }
-                            <button 
-                                
-                                onClick={() => this.props.toggleMode()}
-                                
-                                >Toggle Mode</button>
+                        
                             <button 
                                 
                                 onClick={() => this.props.toggleUnits()}
@@ -89,7 +83,7 @@ const mapDispatchToProps = (dispatch) => {
         toggleUnits: () => dispatch(toggleUnits()),
         getWeatherByManualLocation: (location) => dispatch(getWeatherByManualLocation(location)),
         getWeatherByGeoLocation: () => dispatch(getWeatherByGeoLocation()),
-        toggleMode: () => dispatch(toggleMode())
+        refresh: () => dispatch(refresh())
     }
 }
 
