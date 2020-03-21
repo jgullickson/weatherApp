@@ -2,8 +2,8 @@
     height: 100px;
     width: 100px;
     // border: 5px solid rgba(255;255;255;0.3);
-    border: 5px solid #35353575;
-    border-top-color: #81c683;
+    border: 5px solid $color1;
+    border-top-color: $color4;
     border-radius: 50%;
     z-index: 1;
     animation: spin 1s linear infinite;
@@ -39,4 +39,21 @@
         color: rgb(230, 63, 63);
         font-weight: bold
     }
+}
+
+#display-container {
+    color: rgba(245, 245, 245, 0.897);
+    background-color: $color2;
+    // border-radius: 10px;
+    padding: 2rem;
+}
+
+#location-title {
+    margin: 0;
+}
+
+#temp {
+    background-color: $color5;
+    display: inline-block;
+    padding: 0.25em 0.5em;
 }

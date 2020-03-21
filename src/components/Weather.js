@@ -14,7 +14,7 @@ class Weather extends React.Component {
             <div id='weather-component-container' className='section'>
                 {this.props.isFetching ? <div id='spinner-container'><div id='fetchSpinner'/></div> : null}
                 <div className='row'>
-                <div id='display-container' className='col s12 m8'>
+                <div id='display-container' className='col s12 m6'>
                     {this.props.data.location && this.props.data.current &&
                     <div className='card-content'>
                             <div id='location-container'>
@@ -60,7 +60,7 @@ class Weather extends React.Component {
                         </div>
                     }
                 </div>
-                <Controls cols='col s12 m4'/>
+                <Controls cols='col s12 m5'/>
                 </div>
                 <Forecast cols='col s12'/>
             </div>

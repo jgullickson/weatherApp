@@ -1,3 +1,4 @@
+/* RGB */
 .materialize-red {
   background-color: #e51c23 !important; }
 
@@ -6529,16 +6530,35 @@ input[type=range]::-ms-thumb {
     text-align: center;
     margin-top: 1.2rem; } }
 
+.app-container {
+  padding: 2em; }
+
 #control-container {
   display: flex;
   flex-direction: column; }
   #control-container button {
     width: 100%;
     display: block;
-    color: white; }
+    color: whitesmoke;
+    background-color: #f15622; }
     #control-container button i {
       display: inline-block;
       vertical-align: bottom; }
+    #control-container button:hover {
+      background-color: whitesmoke;
+      color: #f15622; }
+    #control-container button:focus {
+      background-color: whitesmoke;
+      color: #f15622; }
+  #control-container label {
+    color: whitesmoke; }
+  #control-container input {
+    color: whitesmoke !important;
+    font-size: 2em;
+    background-color: transparent !important; }
+    #control-container input:focus {
+      background-color: whitesmoke;
+      color: #f15622; }
 
 #forecast-container {
   display: flex;
@@ -6551,7 +6571,10 @@ input[type=range]::-ms-thumb {
   width: 150px;
   height: 300px;
   text-align: center;
-  padding: 1em; }
+  padding: 1em;
+  color: rgba(245, 245, 245, 0.897);
+  background-color: #7a93ac;
+  margin: 0.25em; }
   .day i {
     display: block;
     height: 24px; }
@@ -6580,12 +6603,15 @@ input[type=range]::-ms-thumb {
       margin: 0 5px; }
     .day .card-reveal .uv {
       color: #8c07c5; }
+  .day .temp {
+    color: whitesmoke;
+    background-color: #2e2e3a; }
 
 #fetchSpinner {
   height: 100px;
   width: 100px;
-  border: 5px solid #35353575;
-  border-top-color: #81c683;
+  border: 5px solid #617073;
+  border-top-color: #f15622;
   border-radius: 50%;
   z-index: 1;
   animation: spin 1s linear infinite; }
@@ -6613,11 +6639,46 @@ input[type=range]::-ms-thumb {
     color: #e63f3f;
     font-weight: bold; }
 
+#display-container {
+  color: rgba(245, 245, 245, 0.897);
+  background-color: #7a93ac;
+  padding: 2rem; }
+
+#location-title {
+  margin: 0; }
+
+#temp {
+  background-color: #2e2e3a;
+  display: inline-block;
+  padding: 0.25em 0.5em; }
+
 #app-header {
-  padding-left: 10% !important; }
+  padding-left: 2rem !important;
+  font-family: Oxanium, sans-serif;
+  background-color: #2e2e3a;
+  padding: 0.5em;
+  margin: auto; }
+
+a {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+
+h1 {
+  font-size: 2rem;
+  user-select: none;
+  margin: 0 0.25em;
+  display: block;
+  color: #7a93ac; }
+  h1 #wizard {
+    color: rgba(245, 245, 245, 0.897); }
+
+#logo {
+  height: 1.5rem;
+  margin: 0 3px; }
 
 body {
-  background-color: #262627;
+  background-color: #92bcea;
   color: whitesmoke; }
 
 @media (max-width: 500px) {

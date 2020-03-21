@@ -23,15 +23,15 @@ class Forecast extends React.Component {
         return (
             <div id='forecast-container' className={this.props.cols}>
                 {this.props.forecast.forecastday &&
-                this.props.forecast.forecastday.map((f, i) => {
+                this.props.forecast.forecastday.filter((f,i) => i !== 0).map((f, i) => {
                     return(
-                        <div key={i} className={'day card transparent'}>
+                        <div key={i} className={'day card'}>
                             <div className='card-content'>
                                 <span className="card-title activator"><i className="material-icons right">keyboard_arrow_down</i></span>
                                 <div>{moment(f.date).format('ddd')}</div>
                                 <div>{moment(f.date).format('MM/DD')}</div>
                                 <div><img src={f.day.condition.icon}/></div>
-                                <div className='teal-text text-lighten-4'>{this.props.units === 'imperial' ? f.day.avgtemp_f : f.day.avgtemp_c}&deg;{this.props.units === 'imperial' ? 'F' : 'C'}</div>
+                                <div className='temp'>{this.props.units === 'imperial' ? f.day.avgtemp_f : f.day.avgtemp_c}&deg;{this.props.units === 'imperial' ? 'F' : 'C'}</div>
                                 <div>{f.day.condition.text}</div>
                             </div>
                             <div className='card-reveal'>

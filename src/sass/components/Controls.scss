@@ -5,10 +5,31 @@
         @extend .btn;
         width: 100%;
         display: block;
-        color: white;
+        color: whitesmoke;
+        background-color: $color4;
         i {
             display: inline-block;
             vertical-align: bottom;
+        }
+        &:hover {
+            background-color: whitesmoke;
+            color: $color4;
+        }
+        &:focus {
+            background-color: whitesmoke;
+            color: $color4;
+        }
+    }
+    label {
+        color: whitesmoke;
+    }
+    input {
+        color: whitesmoke !important;
+        font-size: 2em;
+        background-color: transparent !important;
+        &:focus {
+            background-color: whitesmoke;
+            color: $color4;
         }
     }
 }

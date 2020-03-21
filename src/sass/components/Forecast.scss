@@ -13,6 +13,9 @@
         height: 300px;
         text-align: center;
         padding: 1em;
+        color: rgba(245, 245, 245, 0.897);
+        background-color: $color2;
+        margin: 0.25em;
 
         i {
             display: block;
@@ -51,6 +54,10 @@
             .uv {
                 color: rgb(140, 7, 197);
             }
+        }
+        .temp {
+            color: whitesmoke;
+            background-color: $color5;;
         }
     }
 
