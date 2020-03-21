@@ -6530,6 +6530,9 @@ input[type=range]::-ms-thumb {
     text-align: center;
     margin-top: 1.2rem; } }
 
+.app-container {
+  padding-top: 4rem; }
+
 #control-container {
   display: flex;
   flex-direction: column; }
@@ -6674,7 +6677,10 @@ input[type=range]::-ms-thumb {
   font-family: Oxanium, sans-serif;
   background-color: #2e2e3a;
   padding: 0.5em;
-  margin: auto; }
+  margin: auto;
+  position: fixed;
+  z-index: 1000;
+  width: 100%; }
 
 a {
   display: flex;
@@ -6686,13 +6692,15 @@ h1 {
   user-select: none;
   margin: 0 0.25em;
   display: block;
-  color: #7a93ac; }
+  color: #7a93ac;
+  transition: 0.25s; }
   h1 #wizard {
     color: rgba(245, 245, 245, 0.897); }
 
 #logo {
   height: 1.5rem;
-  margin: 0 3px; }
+  margin: 0 3px;
+  transition: 0.25s; }
 
 body {
   background-color: #92bcea;

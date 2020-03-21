@@ -39,7 +39,7 @@ class Controls extends React.Component {
                                     if (this.state.editorText === ''){
                                         Swal.fire({
                                             title: "Where now?",
-                                            text: "Please specify a location",
+                                            text: "Please specify a location.",
                                             icon: "question"
                                         })
                                     } else {

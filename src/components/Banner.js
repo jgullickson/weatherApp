@@ -14,7 +14,7 @@ class Banner extends React.Component {
             <div id='app-header' className='z-depth-1' >
                 <a href='#' className='grey-text text-lighten-5'>
                     {/* <i className='material-icons' style={bannerStyle.i}>cloud_queue</i> */}
-                    <h1>weather
+                    <h1 id='name'>weather
                     <span id='wizard'>wizard</span>
                     <img 
                         src={logo} 

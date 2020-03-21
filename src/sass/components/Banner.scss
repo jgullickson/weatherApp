@@ -6,6 +6,9 @@
     background-color: $color5;
     padding: 0.5em;
     margin: auto;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
 }
 
 a {
@@ -20,6 +23,7 @@ h1 {
   margin: 0 0.25em;
   display: block;
   color: $color2;
+  transition: 0.25s;
 
   #wizard {
     color: rgba(245, 245, 245, 0.897)
@@ -29,5 +33,6 @@ h1 {
 #logo {
   height: 1.5rem;
   margin: 0 3px;
+  transition: 0.25s;
 //   margin-bottom: 7.5px;
 }
