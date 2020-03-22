@@ -3,11 +3,11 @@
 Weather application created with using data from [WeatherAPI.com](https://www.weatherapi.com/).
 
 Key technologies used:
-    - React
-    - Redux
-    - Materialize.css
-    - Moment.js
-    - Gulp.js
+- React
+- Redux
+- Materialize.css
+- Moment.js
+- Gulp.js
 
 ## Usage
 ```
