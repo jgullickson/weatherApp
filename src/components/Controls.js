@@ -35,6 +35,7 @@ class Controls extends React.Component {
                                 className='col s12'
                                 />
                             <button 
+                                id='search-btn'
                                 onClick={() => {
                                     if (this.state.editorText === ''){
                                         Swal.fire({
@@ -48,20 +49,14 @@ class Controls extends React.Component {
                                     }
                                 }
                                 }
-                                
-                                >Get Weather</button>
+                                >Search</button>
                             </div>
-                        
                             <button 
-                            onClick={() => this.props.refresh()}
-                            
-                            >Refresh <i className='material-icons'>refresh</i></button>
-                        
-                            <button 
-                                
-                                onClick={() => this.props.toggleUnits()}
-                                
-                                >Toggle Units</button>
+                                id='geo-btn'
+                                onClick={() => this.props.getWeatherByGeoLocation()}
+                            >My Location <i class='material-icons'>gps_fixed</i>
+                            </button>
+                          
                     </div>
                 </div>
         )

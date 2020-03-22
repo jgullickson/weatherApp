@@ -6,7 +6,7 @@
     border-top-color: rgba($color4, .7);
     border-radius: 50%;
     z-index: 100;
-    animation: spin 1s ease-in-out infinite;
+    animation: spin 1s linear infinite;
 }
 #spinner-container {
     position: absolute;
@@ -49,6 +49,7 @@
     // border-radius: 10px;
     padding: 2rem;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
 }
 
 #location-title {
@@ -59,4 +60,41 @@
     background-color: $color5;
     display: inline-block;
     padding: 0.25em 0.5em;
+}
+
+#refresh-btn {
+    @extend .btn;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    color: whitesmoke;
+    background-color: $color4;
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    &:hover {
+        background-color: whitesmoke;
+        color: $color4;
+    }
+    &:focus {
+        background-color: whitesmoke;
+        color: $color4;
+    }
+    &:active {
+        @extend .spin-once;
+    }
+    i {
+        display: inline-block;
+        vertical-align: bottom;
+    }
+}
+
+.spin-once {
+    animation: spin-1x 0.25s linear 1;
+}
+
+@keyframes spin-1x {
+    to {
+        transform: rotate(360deg)
+    }
 }

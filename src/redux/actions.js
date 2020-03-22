@@ -33,13 +33,14 @@ export const toggleSpinner = () => {
 export const REFRESH = 'REFRESH';
 export const refresh = () => {
     return async (dispatch, getState) => {
+        //refresh data
         dispatch(requestData());
         const { last_query } = getState();
         let data = await fetch(last_query)
                     .then(response => response.json())
                     .then(data => { return data })
                     .catch(error => console.error(error));
-        if (data.error){
+        if (data && data.error){
             console.log(data.error)
             Swal.fire({
                 title: 'Oops!',
@@ -62,7 +63,7 @@ export const getWeatherByManualLocation = (location, days = 7) => {
         const { key } = getState();
         let url_cur = `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${location}&days=${days}`;
         let data = await fetch(url_cur).then(response => response.json()).then(data => {return data;}).catch(error => console.error(error))
-        if (data.error){
+        if (data && data.error){
             console.log(data.error)
             Swal.fire({
                 title: 'Oops!',
