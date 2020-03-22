@@ -9,13 +9,11 @@ class Controls extends React.Component {
     constructor(props){
         super(props)
         this.handleChange = this.handleChange.bind(this);
+        this.state = { editorText: ''};
     }
     componentDidMount(){
         M.AutoInit();
         this.props.getWeatherByGeoLocation();
-    }
-    componentWillMount(){
-        this.setState( { editorText: ''} );
     }
     handleChange(e){
         this.setState( { editorText: e.target.value } )
@@ -49,12 +47,12 @@ class Controls extends React.Component {
                                     }
                                 }
                                 }
-                                >Search</button>
+                                >Search <i className='material-icons'>search</i></button>
                             </div>
                             <button 
                                 id='geo-btn'
                                 onClick={() => this.props.getWeatherByGeoLocation()}
-                            >My Location <i class='material-icons'>gps_fixed</i>
+                            >My Location <i className='material-icons'>gps_fixed</i>
                             </button>
                           
                     </div>

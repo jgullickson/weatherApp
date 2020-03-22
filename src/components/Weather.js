@@ -8,9 +8,9 @@ import Controls from "./Controls";
 // import '../css/Weather.css';
 
 class Weather extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
   render() {
     return (
       <div id="weather-component-container" className="section">
@@ -37,18 +37,19 @@ class Weather extends React.Component {
                     <img
                       id="weather-icon"
                       src={this.props.data.current.condition.icon}
+                      alt={`${this.props.data.current.condition.text} icon`}
                     />
                     <div>
                       <div id="weather-condition">
                         {this.props.data.current.condition.text}
                       </div>
                       <div id="temp">
-                        {this.props.units == "imperial" &&
+                        {this.props.units === "imperial" &&
                           this.props.data.current.temp_f}
-                        {this.props.units == "imperial" && <span>&deg;F</span>}
-                        {this.props.units == "metric" &&
+                        {this.props.units === "imperial" && <span>&deg;F</span>}
+                        {this.props.units === "metric" &&
                           this.props.data.current.temp_c}
-                        {this.props.units == "metric" && <span>&deg;C</span>}
+                        {this.props.units === "metric" && <span>&deg;C</span>}
                       </div>
                     </div>
                   </div>
@@ -56,18 +57,18 @@ class Weather extends React.Component {
                     <ul id="weather-condition" className="">
                       <li id="feel" className="">
                         <span className="label">Feels like: </span>
-                        {this.props.units == "imperial" &&
+                        {this.props.units === "imperial" &&
                           this.props.data.current.feelslike_f}
-                        {this.props.units == "imperial" && <span>&deg;F</span>}
-                        {this.props.units == "metric" &&
+                        {this.props.units === "imperial" && <span>&deg;F</span>}
+                        {this.props.units === "metric" &&
                           this.props.data.current.feelslike_c}
-                        {this.props.units == "metric" && <span>&deg;C</span>}
+                        {this.props.units === "metric" && <span>&deg;C</span>}
                       </li>
                       <li id="wind" className="">
                         <span className="label">Wind: </span>
-                        {this.props.units == "imperial" &&
+                        {this.props.units === "imperial" &&
                           this.props.data.current.wind_mph + " mph "}
-                        {this.props.units == "metric" &&
+                        {this.props.units === "metric" &&
                           this.props.data.current.wind_kph + " kph "}
                         <span>{this.props.data.current.wind_dir}</span>
                       </li>

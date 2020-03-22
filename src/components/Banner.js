@@ -5,9 +5,9 @@ import M from "materialize-css";
 import logo from "../images/magic-wand.svg";
 
 class Banner extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+//   constructor(props) {
+//     super(props);
+//   }
   componentDidMount() {
     M.AutoInit();
   }
@@ -16,7 +16,7 @@ class Banner extends React.Component {
       <div id="app-header" className="z-depth-1">
         <div id="header-content-wrapper">
           <div id='logo-div' className=''>
-            <a href="#" className="grey-text text-lighten-5">
+            <a href="./index.html" className="grey-text text-lighten-5">
               {/* <i className='material-icons' style={bannerStyle.i}>cloud_queue</i> */}
               <h1 id="name">
                 weather
