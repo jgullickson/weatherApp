@@ -1,6 +1,7 @@
 import React from 'react';
 import Banner from './Banner';
 import Weather from './Weather';
+import Chart from './Chart';
 import '../css/styles.css';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <Banner />
       <div className="app-container">
         <Weather />
+        <Chart />
       </div>
     </div>
   );

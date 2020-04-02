@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/weather-wizard/static/css/main.036a6a35.chunk.css",
+    "main.js": "/weather-wizard/static/js/main.66b7d5bb.chunk.js",
+    "main.js.map": "/weather-wizard/static/js/main.66b7d5bb.chunk.js.map",
+    "runtime-main.js": "/weather-wizard/static/js/runtime-main.f0207fc8.js",
+    "runtime-main.js.map": "/weather-wizard/static/js/runtime-main.f0207fc8.js.map",
+    "static/js/2.484e2914.chunk.js": "/weather-wizard/static/js/2.484e2914.chunk.js",
+    "static/js/2.484e2914.chunk.js.map": "/weather-wizard/static/js/2.484e2914.chunk.js.map",
+    "index.html": "/weather-wizard/index.html",
+    "precache-manifest.b95bb02613282222efb74eec671584e0.js": "/weather-wizard/precache-manifest.b95bb02613282222efb74eec671584e0.js",
+    "service-worker.js": "/weather-wizard/service-worker.js",
+    "static/css/main.036a6a35.chunk.css.map": "/weather-wizard/static/css/main.036a6a35.chunk.css.map",
+    "static/js/2.484e2914.chunk.js.LICENSE.txt": "/weather-wizard/static/js/2.484e2914.chunk.js.LICENSE.txt",
+    "static/media/high_arrow.svg": "/weather-wizard/static/media/high_arrow.e0a01615.svg",
+    "static/media/humidity.svg": "/weather-wizard/static/media/humidity.895ad6bd.svg",
+    "static/media/low_arrow.svg": "/weather-wizard/static/media/low_arrow.37c2dbc7.svg",
+    "static/media/magic-wand.svg": "/weather-wizard/static/media/magic-wand.f4080908.svg",
+    "static/media/raindrop.svg": "/weather-wizard/static/media/raindrop.ed776451.svg",
+    "static/media/wind.svg": "/weather-wizard/static/media/wind.e6649c74.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f0207fc8.js",
+    "static/js/2.484e2914.chunk.js",
+    "static/css/main.036a6a35.chunk.css",
+    "static/js/main.66b7d5bb.chunk.js"
+  ]
+}
