@@ -17,11 +17,13 @@ $color5: rgba(46, 46, 58, 1);
 @import './components/Forecast.scss';
 @import './components/Weather.scss';
 @import './components/Banner.scss';
+@import './components/Chart.scss';
 
 
 body {
   background-color: $color3;
   color: whitesmoke;
+  padding-bottom: 2%;
 }
 
 input:-webkit-autofill,

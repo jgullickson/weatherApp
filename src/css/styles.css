@@ -6606,7 +6606,8 @@ input[type=range]::-ms-thumb {
   display: flex;
   width: 100%;
   max-width: 100%;
-  flex-wrap: wrap; }
+  flex-wrap: nowrap;
+  overflow: scroll; }
   @media (max-width: 400px) {
     #forecast-container {
       display: flex;
@@ -6804,9 +6805,35 @@ h1 {
 .switch label .lever {
   background-color: rgba(0, 0, 0, 0.38); }
 
+#chart-container {
+  background-color: #2e2e3a;
+  padding: 2rem;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2); }
+
+#chart-flex {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly; }
+
+#feature-container {
+  flex-basis: 30%; }
+  #feature-container input {
+    color: whitesmoke; }
+
+#chart-title {
+  color: whitesmoke;
+  font-size: 2rem; }
+
+.chart-legend {
+  fill: whitesmoke; }
+
+.chart-stroke {
+  stroke: #f15622; }
+
 body {
   background-color: #92bcea;
-  color: whitesmoke; }
+  color: whitesmoke;
+  padding-bottom: 2%; }
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,

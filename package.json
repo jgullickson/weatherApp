@@ -1,11 +1,13 @@
 {
-  "name": "reacted",
+  "name": "weather-wizard",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://jgullickson.github.io/weather-wizard",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.1",
     "@testing-library/user-event": "^7.2.1",
+    "d3": "^5.15.1",
     "materialize-css": "^1.0.0-rc.2",
     "moment": "^2.24.0",
     "react": "^16.13.0",
@@ -20,7 +22,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -38,6 +42,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^2.2.0",
     "gulp": "^4.0.2",
     "gulp-sass": "^4.0.2",
     "gulp-savefile": "^0.1.1",
