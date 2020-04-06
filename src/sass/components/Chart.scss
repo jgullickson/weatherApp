@@ -1,6 +1,6 @@
 #chart-container {
-    background-color: rgba(211, 211, 211, 0.137);
-    padding: 1em;
+    background-color: $color5;
+    padding: 2rem;
 }
 
 #chart-flex {
@@ -9,15 +9,23 @@
     justify-content: space-evenly;
 }
 
-#feature-select {
-    
-}
-
 #feature-container {
-    flex-basis: 30%
+    flex-basis: 30%;
+
+    input {
+        color: whitesmoke;
+    }
 }
 
 #chart-title {
-    color: $color1;
+    color: whitesmoke;
     font-size: 2rem;
+}
+
+.chart-legend {
+    fill: whitesmoke;
+}
+
+.chart-stroke {
+    stroke: $color4;
 }

@@ -72,13 +72,14 @@ const Chart = (props) => {
 
     svgElement.append("text")
                 .attr("transform", `translate(50, ${p})`)
+                .attr("class", "chart-legend")
                 .text(selected_feature)
     
     svgElement.append("path")
                 .datum(data)
                 .attr("fill", "none")
-                .attr("stroke", "#f3856e")
-                .attr("stroke-width", 2)
+                .attr("class", "chart-stroke")
+                .attr("stroke-width", 4)
                 .attr("d", d3.line()
                             .x((d,i) => scaleX(i))
                             .y(d => scaleY(d['day'][selected_feature]))
@@ -103,9 +104,9 @@ const Chart = (props) => {
         <div id='feature-container'>
             <div className='input-field' id='feature-select'>
                 <select
-                    defaultValue='Select'
+                    defaultValue='Select Forecast Feature'
                     onChange={(e) => updateSelectedFeature(e.target.value)}>
-                    <option disabled>Select</option>
+                    <option disabled>Select Forecast Feature</option>
                     {features.map((feat, ind) => {
                         return <option className='feature' key={ind}>{feat}</option>
                     })}
