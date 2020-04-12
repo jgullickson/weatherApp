@@ -2,6 +2,10 @@
 
 Weather application created with using data from [WeatherAPI.com](https://www.weatherapi.com/).
 
+[Live demo on Heroku](https://gentle-wildwood-63458.herokuapp.com/) .
+(This is hosted on a free dyno, which goes to sleep after a period of inactivity. If the app doesn't load on first try, reload the page).
+
+
 Key technologies used:
 - React
 - Redux
